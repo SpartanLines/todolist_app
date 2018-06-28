@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Document</title>
+</head>
+<body>
+        <div class="container">
+        <h2>    <%= listdata.ListName %>  </h2>
+        
+        <form action ="<%= listid %>/addtask" method="POST">
+        
+        <input type="text" name="newtask" placeholder="add new task">
+        
+        <input type="hidden" name="alltasks" value="<%= listdata.Task %>">
+        <% if(listdata.Task){   %>
+        <% } %>
+        <button> Add Task </button>
+        
+        
+        <h2> Added Task </h2>
+        <%  if(listdata.Task){ %>
+        <% for( var i = 0; i < listdata.Task.length; i++){ %>
+            <li><input type="checkbox" name="check" value="<%= listdata.Task[i] %>" /> <%= listdata.Task[i] %> </li>
+        <% } %>
+        <button formaction="<%= listid %>/removetask" type="submit" id="top"> Remove </button>
+        <%  } %>
+        
+        </form>
+        
+        <h2> Completed task </h2>
+        <% if(listdata.Completed){%>
+         <% for(var i = 0; i < listdata.Completed.length; i++){ %>
+            <li><input type="checkbox" checked><%= listdata.Completed[i] %> </li>
+        <% } %>
+        <% }%>
+        </div>
+        
+        </body>
+</html>

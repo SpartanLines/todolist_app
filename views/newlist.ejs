@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/newlist" method="POST">
+    <select name="category" id="">
+            <% for( var i = 0; i < categories.length; i++){ %>
+                <li><option type="checkbox" name="check" value=" <%=categories[i].id%>" /> <%= categories[i].data %> </option></li>
+            <% } %>
+    </select>
+    <br>
+    <input name="listname" type="text" placeholder="enter list name">
+    <br>
+    <button type="submit"> Create list</button>
+
+    
+    
+    
+    
+    
+    
+    </form>
+</body>
+</html>
